@@ -1,0 +1,16 @@
+{% extends "anime_lists/base.html" %}
+
+{% block content %}
+
+    <p>Topics</p>
+
+    <ul>
+        {% for title in titles %}
+          <li>
+            <a href="{% url 'anime_lists:title' title.id %}">{{ title }}</a>
+          </li>
+        {% empty %}
+          <li>No titles have been added yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
